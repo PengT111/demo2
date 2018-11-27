@@ -81,13 +81,16 @@ const AppNavigation = createStackNavigator(
     {
         TabScreens: {
             screen: TabScreens,
-            // navigationOptions:{
-            //     header:null
-            // }
+            navigationOptions:{
+                header:null
+            }
         },
+        Publish:{
+            screen: Publish,
+        }
     },
     {
-       
+        initialRouteName:'TabScreens',
     }
 );
 export default AppNavigation
