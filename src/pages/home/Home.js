@@ -268,7 +268,7 @@ const styles = StyleSheet.create({
         marginTop:Platform.OS==='android'?StatusBar.currentHeight :29
     },
     inputBox:{
-        width:272,
+        width:272, 
         height:'100%',
         borderRadius:5,
         borderWidth:1,
