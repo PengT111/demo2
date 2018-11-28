@@ -7,8 +7,23 @@ export default class Home extends Component{
     constructor(props){
         super(props)
     }
-
-    // sectionItem=({item})=>()
+    _renderItem=({item})=>(
+        <TouchableOpacity style={styles.listItem}>
+            <Image style={styles.listImg} source={require('../../images/home_ico_ppz.png')}/>
+            <View>
+                <Text>青啤龙悦湾 3室1厅</Text>
+                <Text>85㎡/南 北/齐鲁园 共6层</Text>
+                <View>
+                    <Text>59.5万</Text>
+                    <Text>7000元/平</Text>
+                </View>
+                <View>
+                    <Text>房本满五年</Text>
+                    <Text>随时看房</Text>
+                </View>
+            </View>
+        </TouchableOpacity>
+    )
     render(){
         return(
             <ScrollView style={styles.container} 
@@ -144,12 +159,32 @@ export default class Home extends Component{
                         </TouchableOpacity>
                     </View>
                 </View>
+                <FlatList
+                    style={styles.flatList}
+                    renderItem={this._renderItem}
+                />
             </ScrollView>
         )
     }
 }
 
 const styles = StyleSheet.create({
+    listItem:{
+        width:'100%',
+        height:116,
+        display:'flex',
+        flexDirection:'row',
+        alignItems:'center',
+        justifyContent:'flex-start',
+    },
+    listImg:{
+        width:121,
+        height:92
+    },
+    flatList:{
+        // flex:1,
+        width:'100%'
+    },
     activeTitle:{
         fontSize:12,
         color:'#7B9FFF'
